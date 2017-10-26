@@ -50,7 +50,7 @@ class ProductController extends Controller
         $num_elements = 0;
 
         //dd(count($feature['feature']));
-        
+
         for($i=0;$i<count($feature['feature'])  ;$i++)
         {
             $data = new Feature();
@@ -157,6 +157,15 @@ class ProductController extends Controller
     }
     public function getIndex()
     {
-        return view('product.index');
+        return view('try.product.index');
+    }
+    public function indexDataTable()
+    {
+        $products = Product::all();
+        return response()->json($products);
+    }
+    public function indexpro()
+    {
+        return view('try.product.datatable');
     }
 }
